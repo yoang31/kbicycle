@@ -1,0 +1,10 @@
+@charset "utf-8";
+
+body{width:100%;display:flex;}
+#wrap{width:100%;}
+#left_nav{width:70px;height:1000px; background-color: aliceblue;position:fixed;}
+header{width:100%;height:125px;background-color:green;}
+header .contents{width:1500px;height:125px;margin:0 auto;display:flex;justify-content:space-evenly;align-items:center;}
+header .contents img{width:250px;height:55px;}
+header .contents .nav{width:1000px;height:80px;background-color:gold;}
+section{width:100%;height:1000px;background-color: aquamarine;}
