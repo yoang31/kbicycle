@@ -3,22 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>K자전거여행</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/index.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 </head>
 <body>
-    <div id="left_nav"></div>
     <div id="wrap">
         <header>
             <div class="contents">
                 <img src="img/logo.png"></img>
-                <div class="nav"></div>
+                <div class="nav">
+                    <ul>
+                        <li>
+                            <a href="#">자전거길</a>
+                        </li>
+                        <li><a href="#">숙박/음식점</a></li>
+                        <li><a href="#">전국자전거지도</a></li>
+                        <li><a href="#">소식알림</a></li>
+                        <li><a href="#">여행도우미</a></li>
+                    </ul>
+                </div>
             </div>
         </header>
-        <section></section>
-    </div></div>
+        <section>
+            <div class="section_content_box">
+                <div class="section_content_box_1">
+                    <div class="contents">
+                        <div class="explain_box">
+                            <h3>강원춘천</h3>
+                            <h1>의암호 자전거길</h1>
+                            <br>
+                            <p>북한강과 의암호수변의 경치도 장관이지만, 국내 최장의 호수조망시설인<br>
+                                소양강 스카이워크와 의암스카이워크가 단연손꼽힌다. 바퀴 사이로 투명한<br> 
+                                유리를 통해 내려다 보이는 수면은마치 호수위를 걷는 듯한 스릴과 감동을<br> 
+                                느끼게 해 준다. 또한 모든 연령대를 위한 다양한 문화 및 레저 시설들이<br>
+                                마련돼있어 여행의 종합 선물세트같은 코스이다.</p>
+                            <br>
+                            <p>감상포인트 : 의암스카이워크, 소양강</p>
+                            <p>여행 TIP : 소양스카이워크, 춘천인형극장, 애니메이션박물관</p>
+                            <p>먹거리 : 닭갈비 , 막국수 </p>
+                        </div>
+                        <div class="content_img">
+                            <img id="section_img_1" src="img/1.jpg">
+                        </div>
+                    </div>
+                </div>
+                <div class="section_content_box_2">
+                    <div class="contents">
+                        <div class="explain_box">
+                            <h3>경기 파주</h3>
+                            <h1>DMZ 자전거길</h1>
+                            <br>
+                            <p>임진각, 반구정, 화석정 등 지역의 주요관광지와 연계돼 있는 DMZ<br>
+                                자전거길은 임진강을 따라 주변 농촌의 들판과 야산이 끝없이<br> 
+                                펼쳐져 있다. 이곳의 유일한 섬 초평도에는 각종 야생화는 물론<br> 
+                                희귀조류인 말똥가리 등이 서식하고 있는 곳으로 장산전망대를<br>
+                                이용하면 오염되지 않은 생태계의 중요한 가치를 한눈에 내려다 볼<br>
+                                수 있다. 자전거 쉼터 및 보관소 등이 곳곳에 마련되어 라이더들의<br>
+                                편의를 돕는다.
+                            </p>
 
-    
+                            <br>
+                            <p>감상포인트 : DMZ 평화누리길, 초평도</p>
+                            <p>여행 TIP : 임진강, 화석정</p>
+                            <p>먹거리 : 장어, 참게매운탕, 두부요리 </p>
+                        </div>
+                        <div class="content_img">
+                            <img id="section_img_1" src="img/2.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="back">
+                <img src="img/back.png">
+            </div>
+            <div class="next">
+                <img src="img/next.png">
+            </div>
+        </section>
+        <div id="article"></div>
+        <div id="article2"></div>
+        <footer></footer>
+    </div>
+    <div id="left_nav">
+        <ul>
+            <li>빠른<br>검색</li><br>
+            <li><a href="#">서울</a></li>
+            <li><a href="#">경기</a></li>
+            <li><a href="#">인천</a></li>
+            <li><a href="#">강원</a></li>
+            <li><a href="#">충북</a></li>
+            <li><a href="#">충남</a></li>
+            <li><a href="#">세종</a></li>
+            <li><a href="#">대전</a></li>
+            <li><a href="#">대구</a></li>
+            <li><a href="#">전북</a></li>
+            <li><a href="#">경북</a></li>
+            <li><a href="#">울산</a></li>
+            <li><a href="#">경남</a></li>
+            <li><a href="#">부산</a></li>
+            <li><a href="#">전남</a></li>
+            <li><a href="#">광주</a></li>
+            <li><a href="#">제주</a></li>
+
+
+        </ul>
+    </div>
+
+    <script type="text/javascript">
+        $(window).on('scroll',function(){
+            if($(window).scrollTop()){
+                $('header').addClass('active');
+            }else{
+                $('header').removeClass('active');
+            }
+        });
+        $(document).ready(function(){
+            var imgs;
+            var img_count;
+            var img_position = 1;
+            var img_name;
+            imgs = $(".section_content_box");
+            img_count = imgs.children().length;
+
+            $('.back').click(function(){
+                back();
+            });
+            $('.next').click(function(){
+                next();
+            });
+            function back(){
+                if(1 <  img_position){
+                    console.log("img_position: "+img_position);
+                    $('.section_content_box_'+img_position).hide();
+                    img_position--;
+                    $('.section_content_box_'+img_position).show();
+                }
+            }
+            function next(){
+                if(img_count >  img_position){
+                    console.log("img_position: "+img_position);
+                    $('.section_content_box_'+img_position).hide();
+                    img_position++;
+                    $('.section_content_box_'+img_position).show();
+                }
+            }
+        });
+    </script>
 </body>
 </html>
