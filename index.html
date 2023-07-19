@@ -15,13 +15,28 @@
                 <img src="img/logo.png"></img>
                 <div class="nav">
                     <ul>
-                        <li>
-                            <a href="#">자전거길</a>
+                        <li>자전거길
+                            <ul class="submenu1">
+                                <li><a href="#">자전거길</a></li>
+                                <li><a href="#">자전거 대여소</a></li>
+                                <li><a href="#">주변 관광지</a></li>
+                            </ul>
                         </li>
-                        <li><a href="#">숙박/음식점</a></li>
-                        <li><a href="#">전국자전거지도</a></li>
-                        <li><a href="#">소식알림</a></li>
-                        <li><a href="#">여행도우미</a></li>
+                        <li>숙박/음식점
+                            <ul class="submenu2">
+                                <li>숙박시설</li>
+                                <li>음식점</li>
+                                <li>후기</li>
+                            </ul>
+                        </li>
+                        <li>전국자전거지도</li>
+                        <li>소식알림
+                            <ul class="submenu4">
+                                <li>관련 뉴스</li>
+                                <li>여행 소식</li>
+                            </ul>
+                        </li>
+                        <li>여행도우미</li>
                     </ul>
                 </div>
             </div>
@@ -83,7 +98,27 @@
                 <img src="img/next.png">
             </div>
         </section>
-        <div id="article"></div>
+        <div id="article">
+            <h1>떠나보자 ! 어디든지!!</h1>
+            <div class="boxs">
+                <div class="boxs1">
+                    <div class="box"><iframe width="500" height="300" src="https://www.youtube.com/embed/FJVm-SSrJak" title="혼자 떠난 30일간의 자전거 전국일주 몰아보기 | 2853.66km" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                    <div class="box"><iframe width="500" height="300" src="https://www.youtube.com/embed/oXYLwIVnziQ" title="죽기 전에 달려봐야할 한국의 자전거길 50 : 안 달리면 후회할 진짜 좋은 길 엄선!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                    <div class="box"><iframe width="500" height="300" src="https://www.youtube.com/embed/JFPOYOjlUQY" title="나홀로 브롬톤 자전거 국토종주 [6박7일간의 여행]" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                    <div class="box"><iframe width="500" height="300" src="https://www.youtube.com/embed/erLcfcJotWA" title="우중 라이딩 | 비오는날 자전거 타고 1600m 오르기 | 청옥산 육백마지기│장마 폭우│민디의 자전거 여행 Ep.97" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                    <div class="box"><iframe width="500" height="300" src="https://www.youtube.com/embed/dMDa-SZKUe8" title="혼자서도 충분하다^^ 동해안길 자전거 여행" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                    
+                </div>
+                <div class="boxs2">
+                    <div class="box"><iframe width="500" height="300" src="https://www.youtube.com/embed/meOYaYv9DsY" title="Cycling Across Europe Alone" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                    <div class="box"><iframe width="500" height="300" src="https://www.youtube.com/embed/RBemTPJpwlg" title="Furka Pass (east) - Switzerland raw runs [#3]" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                    <div class="box"><iframe width="500" height="300" src="https://www.youtube.com/embed/J_IqUBVf9sQ" title="Lake Como Bike Ride, Italy  - 4K - 36 Miles / 58 Km" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                    <div class="box"><iframe width="500" height="300" src="https://www.youtube.com/embed/J_IqUBVf9sQ" title="Lake Como Bike Ride, Italy  - 4K - 36 Miles / 58 Km" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                    <div class="box"><iframe width="500" height="300" src="https://www.youtube.com/embed/PcKXjFCC2f0" title="4K | CYCLING THROUGH THE STREETS OF AMSTERDAM | 2020 | CITY TOUR" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                </div>
+            </div>
+            
+        </div>
         <div id="article2"></div>
         <footer></footer>
     </div>
@@ -121,6 +156,48 @@
             }
         });
         $(document).ready(function(){
+              $("header .contents .nav").hover(function(){
+                  $("header").css("background-color","#fff");
+              },function(){
+                 $("header").css("background-color","");
+              });
+
+             var $firstmenu = $('header .contents .nav>ul>li'),
+             $header = $('header');
+             $firstmenu.mouseenter(function(){
+            $header.stop().animate({height:'270px'},200);
+             })
+             .mouseleave(function(){
+            $header.stop().animate({height:'125px'},200);
+            });
+
+            $('header .contents .nav>ul>li:nth-of-type(1)').hover(function(){
+                $('.submenu1').show();
+                $('.submenu1').css('opacity','1');
+                $('.submenu2').hide();
+            },function(){
+                $('.submenu1').css('opacity','0');
+                $('.submenu1').hide();
+            });
+
+            $('header .contents .nav>ul>li:nth-of-type(2)').hover(function(){
+                $('.submenu2').show();
+                $('.submenu1').hide();
+                $('.submenu2').css('opacity','1');
+            },function(){
+                $('.submenu2').css('opacity','0');
+                $('.submenu2').hide();
+            });
+
+            $('header .contents .nav>ul>li:nth-of-type(4)').hover(function(){
+                $('.submenu4').show();
+                $('.submenu4').css('opacity','1');
+            },function(){
+                $('.submenu4').css('opacity','0');
+                $('.submenu4').hide();
+            });
+        
+        
             var imgs;
             var img_count;
             var img_position = 1;
