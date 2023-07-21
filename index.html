@@ -99,6 +99,42 @@
             </div>
         </section>
         <div id="article">
+            <div class="menubar">
+                <ul>
+                    <li><a href="#">자전거길추천</a></li>
+                    <li><a href="#">바닷길</a></li>
+                    <li><a href="#">관련 뉴스</a></li>
+                    <li><a href="#">라이더 후기</a></li>
+                </ul>
+            </div>
+            <div class="artice_content">
+                <div class="artice_content_sub">
+                    <h1>명품 자전거길</h1>
+                    <h3>지자체 명품 자전거길은 전국 곳곳에 거미줄처럼 얽혀있는
+                        지자체가 조성한 자전거길 중에서 여행전문작가, 동호인, 잡지사 기자 등이
+                        참여하여 엄선한 전국 10곳의 명품 자전거길 입니다.</h3>
+                </div>
+                <div class="map_img">
+                    <img src="img/sub020201_img1.png" >
+                    <img src="img/112.png" class="place">
+                    <img src="img/112.png" class="place">
+                    <img src="img/112.png" class="place">
+                    <img src="img/112.png" class="place">
+                    <img src="img/112.png" class="place">
+                    <img src="img/112.png" class="place">
+                    <img src="img/112.png" class="place">
+                    <img src="img/112.png" class="place">
+                    <img src="img/112.png" class="place">
+                </div>
+
+                <!-- <map name="image-map">
+                    <area target="_blank" alt="ducjuck" title="ducjuck" href="ducjuck" coords="127,226,193,288" shape="rect">
+                </map> -->
+            </div>
+
+
+        </div>
+        <div id="article2">
             <h1>떠나보자 ! 어디든지!!</h1>
             <div class="boxs">
                 <div class="boxs1">
@@ -117,12 +153,10 @@
                     <div class="box"><iframe width="500" height="300" src="https://www.youtube.com/embed/PcKXjFCC2f0" title="4K | CYCLING THROUGH THE STREETS OF AMSTERDAM | 2020 | CITY TOUR" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
                 </div>
             </div>
-            
         </div>
-        <div id="article2"></div>
         <footer></footer>
     </div>
-    <div id="left_nav">
+    <!-- <div id="left_nav">
         <ul>
             <li>빠른<br>검색</li><br>
             <li><a href="#">서울</a></li>
@@ -142,10 +176,8 @@
             <li><a href="#">전남</a></li>
             <li><a href="#">광주</a></li>
             <li><a href="#">제주</a></li>
-
-
         </ul>
-    </div>
+    </div> -->
 
     <script type="text/javascript">
         $(window).on('scroll',function(){
@@ -197,7 +229,7 @@
                 $('.submenu4').hide();
             });
         
-        
+            //슬라이드 좌/우 이동 자바스크립트
             var imgs;
             var img_count;
             var img_position = 1;
@@ -227,6 +259,13 @@
                     $('.section_content_box_'+img_position).show();
                 }
             }
+        });
+        //맵 좌표 스크립트
+        let clientPoint = (event) =>{
+            console.log(`화면 좌표 : (${event.clientX-987-63}, ${event.clientY-169})`);
+        }
+        window.addEventListener('click',e=>{
+            clientPoint(e);
         });
     </script>
 </body>
