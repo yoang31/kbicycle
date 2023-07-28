@@ -1,5 +1,43 @@
-$(window).on('scroll',function(){
+$(window).resize(function() { 
+    if(matchMedia("screen and (max-width: 767px").matches){
+        $("section .content_img").css({"width":"360px",
+        "height":"360px"});
 
+    }
+    else if(matchMedia("screen and (min-width: 768px) and (max-width: 969px").matches){
+        $("section .content_img").css({"width":"46vw",
+        "height":"46vw"});
+        $("section .explain_box h1").css("font-size","5.2vw");
+        console.log("768px~969px");
+    }
+    else if(matchMedia("screen and (min-width: 970px) and (max-width: 1099px").matches){
+        $(".logo").css({"width":"19.5vw","height":"4.3vw"});
+        $("section .content_img").css({"width":"450px",
+                                        "height":"450px"});
+        $("section .explain_box h1").css("font-size","50px");
+        $("header .contents .nav>ul li").css("font-size","1.9vw");
+        console.log("0~1099px");
+    } else if(matchMedia("screen and (min-width: 1100px) and (max-width: 1290px)").matches){
+        $(".logo").css({"width":"19.5vw","height":"4.3vw"});
+        $("section .content_img").css({"width":"46.5vw",
+                                        "height":"46.5vw"});
+        $("section .explain_box h1").css("font-size","6.2vw");
+        $("header .contents .nav>ul li").css("font-size","1.9vw");
+        console.log("1100px~1290px");
+    }else if(matchMedia("screen and (min-width: 1291px").matches){
+        $("section .content_img").css({"width":"600px",
+        "height":"600px"
+        });
+        $("section .explain_box h1").css("font-size","80px");
+        $(".logo").css({"width":"250px","height":"55px"});
+        $("header .contents .nav>ul li").css("font-size","25px");
+
+        console.log("1291px~");
+    }
+});
+$(window).on('scroll',function(){
+    
+   
     if (matchMedia("screen and (min-width: 768px)").matches) {
         if($(window).scrollTop()){
             $('header').addClass('active');
@@ -15,6 +53,7 @@ $(window).on('scroll',function(){
       }
 });
 $(document).ready(function(){
+    
       $("header .contents .nav").hover(function(){
           $("header").css("background-color","#fff");
       },function(){
@@ -243,6 +282,10 @@ $(document).ready(function(){
  window.addEventListener('click',e=>{
      clientPoint(e);
  });
+
+ if (matchMedia("screen and (min-width: 1100px) and (max-width: 1290px)").matches) {
+    console.log("dkdk");
+  } else {}
 
     
     
