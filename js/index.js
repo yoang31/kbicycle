@@ -70,6 +70,9 @@ $(document).ready(function(){
 
     //슬라이드 좌/우 이동 자바스크립트
     let w = $(window).innerWidth();
+    $(window).resize(function(){
+        w=$(window).innerWidth();
+    });
     function prev(){
         $('.section_content_box_1:last').prependTo('.section_content_box');
         $('.section_content_box').css('margin-left',-w);
