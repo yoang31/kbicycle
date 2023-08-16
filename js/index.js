@@ -112,8 +112,22 @@ $(document).ready(function(){
         i_d=($(this).index());
         $(this).addClass("port_back").siblings().removeClass("port_back");
         $(".cont_boxs").eq(i_d).show().css("display","flex").siblings().hide();
-        
     });
+    //767이하 크기 main 메뉴 조정
+    let menu_index;
+    $(".main_menu").click(function(){
+        menu_index = $(this).index();
+        $(this).addClass("port_back").siblings().removeClass("port_back");
+        $(".main_menu_2").eq(menu_index).show().css("display","flex").siblings().hide();
+
+    })
+    //화면767 크기 main 메뉴
+    $('.menu_img').click(function(){
+        $('#right_header').css("right","0");
+    });
+    $('.header_end').click(function(){
+        $('#right_header').css("right","-340px");
+    })
 
     //content2 이미지 커지기    
     if($(window).innerWidth()>=1400){
