@@ -25,7 +25,7 @@ li::marker {color: #f1a31f;}
     header{width:100%;height:100px;position:fixed;z-index:5;top:0}
     header .contents{width:100%;height:80px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;}
     header .contents img{width:150px;margin:0 10px;}
-    header .contents img:nth-of-type(2){width:34px;}
+    header .contents .menu_img{width:34px;}
     header .contents .nav{width:700px;display:none;}
     header .contents .nav>ul{width:700px;display:flex;justify-content:center;align-items:center}
     header .contents .nav>ul>li{font-family: 'HakgyoansimWoojuR';font-weight:bold;font-size:17px;position:relative;padding:0 0 0 30px;}
@@ -118,7 +118,7 @@ li::marker {color: #f1a31f;}
     header{width:100%;height:125px;position:fixed;z-index:5;top:0;}
     header .contents{width:100%;height:125px;margin:0 auto;display:flex;align-items:center;}
     header .contents img{width:200px;}
-    header .contents img:nth-of-type(2){display:none;}
+    header .contents .menu_img{display:none;}
     header .contents .nav{width:100%;}
     header .contents .nav>ul{width:100%;display:flex;justify-content:space-evenly;align-items:center}
     header .contents .nav>ul>li{font-family: 'HakgyoansimWoojuR';font-weight:bold;font-size:2vw;position:relative;;}
@@ -191,8 +191,9 @@ li::marker {color: #f1a31f;}
     #wrap{width:100%;position:relative;}    
     header{width:100%;height:125px;} /* position을 주면 위로 뜬다 그래서 동생 요소가 위로온다.*/
     header .contents{width:1400px;height:125px;margin:0 auto;display:flex;justify-content:space-evenly;align-items:center;overflow:hidden;}
-    header .contents img{width:250px;height:55px;}
-    header .contents img:nth-of-type(2){display:none;}
+    
+    header .contents a img{width:250px;height:55px;}
+    header .contents .menu_img{display:none;}
     header .contents .menu{display:none;}
     header .contents .nav{width:100%;}
     header .contents .nav>ul{width:100%;display:flex;justify-content:flex-end;align-items:center}
