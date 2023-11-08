@@ -23,6 +23,10 @@ $(window).on('scroll',function(){
             $('header .contents').removeClass('active');
         }
       }
+
+    if(window.scrollY > 400){
+        animateValue("sss",0,55,2000);
+    }
 });
 $(document).ready(function(){
     
@@ -183,7 +187,24 @@ $(document).ready(function(){
 //      clientPoint(e);
 //  });
 
+function animateValue(id, start, end, duration) {
+    const obj = document.getElementById(id);
+    if(obj.innerHTML == 0){
+    const stepTime = Math.abs(Math.floor(duration / (end - start)));
 
+    let current = start;
+    const step = end > start ? 1 : -1;
+
+    const timer = setInterval(function() {
+    current += step;
+    obj.innerHTML = current+"건";
+    
+    if (current == end) {
+        clearInterval(timer);
+    }
+    }, stepTime);}
+
+}
 
     
     
